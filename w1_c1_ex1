@@ -1,0 +1,118 @@
+package w1_c1;
+
+// import scanner class 
+import java.util.Scanner;
+
+// main code starts here
+public class MainClass {
+	
+	// dashes to print
+	public static final String dashes = "----------------------------------------";
+	
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// 1: Print a String
+		System.out.println("1: Printing Strings.");
+		System.out.println(dashes);
+		System.out.println("Hello\nGagandeep");
+		System.out.println(dashes);
+		
+		// new scanner
+		Scanner userInput = new Scanner(System.in);
+		int num1, num2;
+		float num3, num4;
+		// 2: adding two integers
+		System.out.println("2: Adding two integers.");
+		System.out.println(dashes);
+		System.out.println("Enter 1st integer: ");
+		num1 = userInput.nextInt();
+		System.out.println("Enter 2nd integer: ");
+		num2 = userInput.nextInt();
+		System.out.println("Sum of entered integers (n1 + n2): " + (num1 + num2));
+		System.out.println(dashes);
+		
+		// 3: Divide two numbers
+		System.out.println("3: Divide two numbers");
+		System.out.println(dashes);
+		System.out.println("Enter 1st number: ");
+		num3 = userInput.nextFloat();
+		System.out.println("Enter 2nd number: ");
+		num4 = userInput.nextFloat();
+		System.out.println("Division (n1 / n2): " + (num3 / num4));
+		System.out.println(dashes);
+		
+		// 4: print the result of the following operations
+		
+		System.out.println("4: Result of operations");
+		System.out.println(dashes);
+		System.out.println("<a>. -5 + 8 * 6 = " + (-5 + 8 * 6));
+		System.out.println("<b>. (55+9) % 9 = " + ((55+9) % 9 ));
+		System.out.println("<c>. 20 + -3*5 / 8 = " + (20 + -3*5 / 8 ));
+		System.out.println("<d>. 5 + 15 / 3 * 2 - 8 % 3 = " + (5 + 15 / 3 * 2 - 8 % 3 ));
+		System.out.println(dashes);
+		
+		// 5: Product of two numbers
+		
+		System.out.println("5: Product of two numbers");
+		System.out.println(dashes);
+		System.out.println("Enter 1st number");
+		num3 = userInput.nextFloat();
+		System.out.println("Enter 2nd number");
+		num4 = userInput.nextFloat();
+		System.out.println("Product (n1 * n2): " + (num3 * num4));
+		System.out.println(dashes);
+		
+		// 6: sum, multiply, subtract, divide and remainder of two numbers
+		
+		System.out.println("6: sum, multiply, subtract, divide and remainder of two numbers");
+		System.out.println(dashes);
+		System.out.println("Enter 1st number");
+		num3 = userInput.nextFloat();
+		System.out.println("Enter 2nd number");
+		num4 = userInput.nextFloat();
+		System.out.println("<a>. Sum of "+ num3 + " and " + num4 + " = " + (num3 + num4));
+		System.out.println("<b>. Mul of "+ num3 + " and " + num4 + " = " + (num3 * num4));
+		System.out.println("<c>. Sub of "+ num3 + " and " + num4 + " = " + (num3 - num4));
+		System.out.println("<d>. Div of "+ num3 + " and " + num4 + " = " + (num3 / num4));
+		System.out.println("<e>. Mod of "+ num3 + " and " + num4 + " = " + (num3 % num4));
+		System.out.println(dashes);
+		
+		
+		// 7: Multiplication Table 
+		
+		System.out.println("7: Multiplication Table upto 10");
+		System.out.println(dashes);
+		System.out.println("Enter a number");
+		num1 = userInput.nextInt();
+		for(int i=1; i<=10; i++) {
+			System.out.println(num1 + " * " + i + " = " + num1 * i);
+		}
+		System.out.println(dashes);
+		
+		// 8: Sample Pattern 
+		System.out.println("8: Sample Pattern");
+		System.out.println(dashes);
+		System.out.println("J    a   v     v  a" + '\n' +                                                  
+						   "J   a a   v   v  a a"     + '\n' +                                              
+						   "J  J  aaaaa   V V  aaaaa"     + '\n' +                                             
+						   "JJ  a     a   V  a     a");
+		System.out.println(dashes);
+		
+		// 9: Specific Expression
+		System.out.println("9: Specific Expression");
+		System.out.println(dashes);
+		System.out.println("((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5)) = " + 
+				((25.5 * 3.5 - 3.5 * 3.5) / (40.5 - 4.5)));
+		System.out.println(dashes);
+		
+		// 10: Specific Formula
+		System.out.println("10: Specific Formula");
+		System.out.println(dashes);
+		System.out.println("4.0 * (1 - (1.0/3) + (1.0/5) - (1.0/7) + (1.0/9) - (1.0/11)) = " + 
+				4.0 * (1 - (1.0/3) + (1.0/5) - (1.0/7) + (1.0/9) - (1.0/11)));
+		System.out.println(dashes); 
+	}
+
+}
