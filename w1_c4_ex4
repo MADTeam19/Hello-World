@@ -1,0 +1,239 @@
+package w1_c3_e3_2;
+
+import java.util.Scanner;
+
+// Main class
+public class Exercise3_2 {
+	
+	public static final String dashes = "----------------------------------------";
+	static Scanner userInput = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		float n1, n2, n3;
+		
+		// 1: Smallest among 3 numbers
+		System.out.println("1: Smallest among 3 numbers");
+		System.out.println(dashes);
+		System.out.println("Enter 1st num: ");
+		n1 = userInput.nextFloat();
+		System.out.println("Enter 2nd num: ");
+		n2 = userInput.nextFloat();
+		System.out.println("Enter 3rd num: ");
+		n3 = userInput.nextFloat();
+		userInput.nextLine();
+		// call to function and pass parameters
+		compareNumbers(n1, n2, n3);
+		System.out.println(dashes); 
+		
+		// 2: Average of 3 numbers
+		System.out.println("2: Average of 3 numbers");
+		System.out.println(dashes);
+		System.out.println("Enter 1st num: ");
+		n1 = userInput.nextFloat();
+		System.out.println("Enter 2nd num: ");
+		n2 = userInput.nextFloat();
+		System.out.println("Enter 3rd num: ");
+		n3 = userInput.nextFloat();
+		userInput.nextLine();
+		computeAverage(n1, n2, n3);
+		System.out.println(dashes); 
+		
+		// 3: Display the middle character of a string
+		System.out.println("3: Display the middle character of a string");
+		System.out.println(dashes);
+		String s1 = "ABC1DEF";
+		System.out.println("Given string: " + s1);
+		printMiddleChar(s1);
+		System.out.println(dashes); 
+		
+		// 4: Count of Vowels
+		System.out.println("4: Count of Vowels");
+		System.out.println(dashes);
+		String s2 = "AEIOU";
+		countOfVowels(s2);
+		System.out.println(dashes); 
+		
+		// 5: Count of all words
+		String s3 = "The quick brown fox jumps over the lazy dog.";
+		System.out.println("5: Count of all words");
+		System.out.println(dashes);
+		countWords(s3);
+		System.out.println(dashes);
+		
+		// 6: Sum of digits in an integer
+		System.out.println("6: Sum of digits in an integer");
+		System.out.println(dashes);
+		System.out.print("Enter an integer value: ");
+		String s4 = userInput.nextLine();
+		getDigitsSum(s4);
+		System.out.println(dashes);
+		
+		// 7: Pentagonal numbers upto 50
+		System.out.println("7: Pentagonal numbers upto 50");
+		System.out.println(dashes);
+		pentagonalNumbers();
+		System.out.println(dashes);
+		
+		// 8: Compute the future investment 
+		System.out.println("8: Compute the future investment");
+		System.out.println(dashes);
+		computeInterest();
+		System.out.println(dashes);
+		
+		// 9: Print characters between two characters
+		System.out.println("9: Print characters between two characters");
+		String s5;
+		System.out.print("Enter starting and ending characters: ");
+		s5 = userInput.nextLine();
+		charactersBetween(s5);
+		System.out.println(dashes);
+	
+		// 10: Leap year or not
+		System.out.println("10: Leap year or not");
+		System.out.println(dashes);
+		int year = 0;
+		System.out.print("Enter a Year: ");
+		year = userInput.nextInt();
+		leapYear(year);
+		System.out.println(dashes);
+
+		userInput.close();
+	}
+//---------------------------------------------------------------------------------------------------------
+// USER DEFINED METHODS	
+//---------------------------------------------------------------------------------------------------------
+	// Method to compare smallest number among three
+	static void compareNumbers(float a, float b, float c) {
+		
+		// Nested Ternary operation
+		String msg = a < b ? (a < c ?  a + " is smallest": c + " is smallest") 
+				           : (b < c ?  b + " is smallest": c + " is smallest");
+		System.out.println(msg);
+	}
+	
+	// Method to compute average of 3 numbers
+	static void computeAverage(float a, float b, float c) {
+		System.out.println("Average of " + a + "," + b + "," + c + "= " + ((a+b+c)/3));
+	}
+	
+	// Method to print middle character
+	// if string length ODD, 1 middle character
+	// if string length EVEN, 2 middle characters
+	static void printMiddleChar(String s1) {
+		if (s1.length() % 2 == 0) {
+			System.out.println("String length is Even");
+			System.out.print(s1.charAt(s1.length()/2 - 1));
+			System.out.println(s1.charAt(s1.length()/2));
+		}
+		else {
+			System.out.println("String length is Odd");
+			System.out.println(s1.charAt(s1.length()/2));
+		}
+	}
+	
+	// Method to find total number of vowels
+	static void countOfVowels(String s1) {
+		int count=0;
+		String s2 = s1.toLowerCase();
+		for(int i=0; i< s2.length(); i++) {
+			if(s2.charAt(i) == 'a' || s2.charAt(i) == 'e' ||
+			   s2.charAt(i) == 'i' || s2.charAt(i) == 'o' ||
+			   s2.charAt(i) == 'u') {
+				count++;
+			}
+		}
+		System.out.println("Total Vowels in "+ s1 + ": " + count);
+	}
+	
+	// Method to find the number of words in a string
+	static void countWords(String s3) {
+		int count=0;
+		Boolean state = false;
+		
+		for(int i=0; i<s3.length(); i++) {
+			if(s3.charAt(i) == ' ' || s3.charAt(i) == '\n' || s3.charAt(i) == '\t') {
+				state = false;
+			}
+			else if(state == false) {
+				state = true;
+				count++;
+			}
+		}
+		
+		System.out.println("Given String: " + s3);
+		System.out.println("Count of words: " + count);
+	}
+	
+	//Method to calculate the Sum of digits of an integer
+	static void getDigitsSum(String s4) {
+		int sum = 0;
+		for(int i=0; i<s4.length(); i++) {
+			//System.out.println(s4.charAt(i));
+			sum += Character.getNumericValue(s4.charAt(i));
+		}
+		System.out.println("Sum of digits of " + s4 + " : " + sum);
+	}
+	
+	// Method to print 50 pentagonal numbers
+	static void pentagonalNumbers() {
+		for(int i=1; i<=50; i++) {
+			System.out.print(((3 * (i*i)) - i)/2 + ", ");
+			if(i==10 || i==20 ||i== 30 ||i== 40 ||i== 50) {
+				System.out.println();
+			}
+		}
+	}
+	
+	// Method to compute interest
+	static void computeInterest() {
+		float amount, interest;
+		int duration;
+		
+		System.out.print("Enter investment amount: ");
+		amount = userInput.nextFloat();
+		System.out.print("Enter interest rate: ");
+		interest = userInput.nextFloat();
+		System.out.print("Enter no. of years: ");
+		duration = userInput.nextInt();
+		System.out.println("Years	Future Value");
+		for(int i=1; i<=duration; i++) {
+			System.out.println("" + i + "	" + amount * (1 + ((interest/100) * i)));
+		}
+	}
+	// Method to print characters in between
+	static void charactersBetween(String s5) {
+		if(s5.isEmpty() == false && s5.length() >= 2) {
+			if(s5.charAt(0) < s5.charAt(s5.length()-1)) {
+				char tmp = s5.charAt(0);
+				System.out.print(tmp + " ");
+				int count=1;
+				while(tmp != s5.charAt(s5.length()-1)){
+					tmp++;
+					count++;
+					System.out.print(tmp + " ");
+					if(count == 10) {
+						System.out.println();
+						count=0;
+					}
+				}
+				System.out.println();
+			}
+			else {
+				System.out.println("Starting Char must be small than ending");
+			}
+		}
+		else {
+			System.out.println("Either empty or length less than 2");
+		}
+	}
+	
+	// Method to print leap year
+	static void leapYear(int year) {
+		if((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+			System.out.println("Year " + year + " is a leap year");
+		}
+		else {
+			System.out.println("Year " + year + " is not a leap year");
+		}
+	}
+}
