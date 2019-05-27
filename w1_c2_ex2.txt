@@ -1,0 +1,127 @@
+package w1_c1_e2;
+
+import java.util.Scanner;
+
+// Main class
+public class Exercise2 {
+	
+	final static String dashes = "----------------------------------------";
+	
+	public static void main(String[] args) {
+		double n1, n2, n3;
+		Scanner userInput = new Scanner(System.in);
+		
+		//1: Perimeter and Area of circle
+		System.out.println("1: Perimeter and Area of circle");
+		System.out.println(dashes);
+		System.out.println("Enter radius of circle");
+		n1 = userInput.nextFloat();
+		System.out.println("Perimeter: " + (2 * Math.PI * n1));
+		System.out.println("Area: " + (Math.PI * n1 * n1));
+		System.out.println(dashes);
+		
+		// 2: average of the three numbers
+		System.out.println("2: average of the three numbers");
+		System.out.println(dashes);
+		System.out.println("Enter 1st number");
+		n1 = userInput.nextFloat();
+		System.out.println("Enter 2nd number");
+		n2 = userInput.nextFloat();
+		System.out.println("Enter 3rd number");
+		n3 = userInput.nextFloat();
+		System.out.println("Average of " + n1 + "," + n2 + "," + n3 + " = " + ((n1+n2+n3)/3)); 
+		System.out.println(dashes);
+		
+		// 3: area and perimeter of a rectangle
+		System.out.println("3: area and perimeter of a rectangle");
+		System.out.println(dashes);
+		System.out.println("Enter width of Rect.");
+		n1 = userInput.nextFloat();
+		System.out.println("Enter height of Rect.");
+		n2 = userInput.nextFloat();
+		System.out.println("Perimeter: " + (2 * (n1 + n2))); 
+		System.out.println("Area: " + (n1*n2)); 
+		System.out.println(dashes);
+		
+		// 4: American Flag
+		for(int j=0; j<8; j++) {
+			for(int i=0; i<8; i++) {
+				System.out.print('*');
+			}
+			for(int k=0; k<30; k++) {
+				System.out.print('=');
+			}
+			System.out.println();
+		}
+		for(int m=0; m<4; m++) {
+			for(int k=0; k<38; k++) {
+				System.out.print('=');
+			}
+			System.out.println();
+		}
+		
+		// 5: Swap two variables
+		System.out.println("5: Swap two variables");
+		System.out.println(dashes);
+		n1=50;
+		n2=21;
+		System.out.println("Variable n1 before swap: " + n1);
+		System.out.println("Variable n2 before swap: " + n2);
+		System.out.println("Variables swaped");
+		n3=n1;
+		n1=n2;
+		n2=n3;
+		System.out.println("Variable n1 after swap: " + n1);
+		System.out.println("Variable n2 after swap: " + n2);
+		System.out.println(dashes);
+		
+		// 6: face
+		System.out.println("6: A Face");
+		System.out.println(dashes);
+		System.out.println(" +\"\"\"\"\"+");
+		System.out.println("[| o o |]");
+		System.out.println(" |  ^  |");
+		System.out.println(" | '-' |");
+		System.out.println(" +-----+");
+		System.out.println(dashes);
+		                                            
+		String s1, s2;
+		int x, y;
+		
+		// 7: Add two binary numbers
+		System.out.println("7: Add two binary numbers");
+		System.out.println(dashes);
+		System.out.println("Enter 1st Binary Number:");
+		s1 = userInput.nextLine();
+		System.out.println("Enter 2nd Binary Number:");
+		s2 = userInput.nextLine();
+		x = Integer.parseInt(s1, 2);
+		y = Integer.parseInt(s2, 2);
+		System.out.println("Binary Sum: " + Integer.toBinaryString(x + y));
+		System.out.println(dashes);
+		
+		// 8: Multiply two binary numbers
+		System.out.println("8: Multiply two binary numbers");
+		System.out.println(dashes);
+		System.out.println("Binary Mul: " + Integer.toBinaryString(x * y));
+		System.out.println(dashes);
+		
+		// 9: Decimal number to Binary
+		System.out.println("9: Decimal number to Binary");
+		System.out.println(dashes);
+		System.out.println("Enter decimal number:");
+		x = userInput.nextInt();
+		System.out.println("Decimal " + x + " to Bin: " + Integer.toBinaryString(x));
+		System.out.println(dashes);
+		
+		// 10: Decimal number to Hex
+		System.out.println("10: Decimal number to Hex");
+		System.out.println("Decimal " + x + " to Hex: " + Integer.toHexString(x));
+		System.out.println(dashes);
+		
+		System.out.println(dashes);
+		                                                   
+		  
+		userInput.close();
+	}
+}
