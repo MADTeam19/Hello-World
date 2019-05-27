@@ -1,0 +1,91 @@
+package w1_c2_e3;
+
+// main class
+public class Exercise3 {
+	
+	public static final String dashes = "----------------------------------------";
+	
+	public static void main(String[] args) {
+		
+		String str1 = "Java Exercises!";
+		
+		// 1: Character at given index
+		System.out.println("1: Character at given index");
+		System.out.println(dashes);
+		System.out.println("Given String: " + str1);
+		System.out.println("Character at index 0: " + str1.charAt(0));
+		System.out.println("Character at index 10: " + str1.charAt(10));
+		System.out.println(dashes);
+		
+		String str2 = "w3resource.com";   
+		
+		// 2: Unicode code point at the given index
+		System.out.println("2: Unicode code point at the given index");
+		System.out.println(dashes);
+		System.out.println("Given String: " + str2);
+		System.out.println("Unicode at index 0: " + str2.codePointAt(0));
+		System.out.println("Unicode at index 10: " + str2.codePointAt(10));
+		
+		// 3: Unicode code point before the specified index
+		System.out.println("3: Unicode code point before the specified index");
+		System.out.println(dashes);
+		System.out.println("Given String: " + str2);
+		System.out.println("Unicode before index 1: " + str2.codePointBefore(1));
+		System.out.println("Unicode before index 11: " + str2.codePointBefore(11));
+		System.out.println(dashes);
+		
+		// 4: Count of unicode
+		System.out.println("4: Count of unicode");
+		System.out.println(dashes);
+		System.out.println("Given String: " + str2);
+		System.out.println("Unicode count 0-10: " + str2.codePointCount(0, 10));
+		System.out.println(dashes);
+		
+		// 5: Compare two strings
+		System.out.println("5: Compare two strings");
+		System.out.println(dashes);
+		System.out.println("Given String 1: " + str1);
+		System.out.println("Given String 2: " + str2);
+		if(str1.compareTo(str2) < 0) {
+			System.out.println(str1 + " is less than " + str2);
+		}
+		System.out.println(dashes);
+		
+		// 6: Compare two strings ignore case
+		System.out.println("6: Compare two strings ignore case");
+		System.out.println(dashes);
+		System.out.println("Given String 1: " + str1);
+		System.out.println("Given String 2: " + str2);
+
+		if(str1.compareToIgnoreCase(str2) < 0) {
+			System.out.println(str1 + " is less than " + str2);
+		}
+		System.out.println(dashes);
+		
+		String str3 = "PHP Exercises and ",
+			   str4 = "Python Exercises";     
+		// 7: Concatenate two strings
+		System.out.println("7: Concatenate two strings");
+		System.out.println(dashes);
+		System.out.println("Given String 1: " + str3);
+		System.out.println("Given String 2: " + str4);
+		System.out.println("After Concat:");
+		System.out.println(str3.concat(str4));
+		System.out.println(dashes);
+		
+		String str5 = "PHP Exercises and Python Exercises";
+		// 8: Find character sequence
+		System.out.println("8: Find character sequence");
+		System.out.println(dashes);
+		System.out.println("Given String: " + str5);
+		System.out.print("'and' in given string? ");
+		System.out.println(str5.contains("and"));
+		System.out.println(dashes);
+		
+		// 9: compare a given string to the specified character sequence
+		
+		// 10: compare a given string to the specified string buffer
+	
+	}
+
+}
