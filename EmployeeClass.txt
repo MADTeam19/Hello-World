@@ -1,0 +1,53 @@
+
+public class Employee {
+	private double salary;
+	private int workingHours;
+	
+	// constructor
+	public Employee(double salary, int workingHours) {
+		this.salary = salary;
+		this.workingHours = workingHours;
+	}
+	
+	public void addSalary() {
+		if(this.salary < 500) {
+			this.salary += 10;
+			System.out.println("$10 are added to salary");
+		}
+		System.out.println("Updated salary is $" + this.salary);
+	}
+	
+	public void addWork() {
+		if(this.workingHours > 6) {
+			this.salary += 5;
+			System.out.println("$5 are added to salary");
+		}
+		else {
+			System.out.println("WorkHours < 6 :");
+		}
+		System.out.println("Updated salary is $" + this.salary);
+	}
+	
+	public void updateWorkHours(int hours) {
+		this.workingHours = hours;
+		System.out.println("WorkHours updated to: " + this.workingHours);
+	}
+	
+	public void updateSalary(double salary) {
+		this.salary = salary;
+		System.out.println("Salary updated to: $" + this.salary);
+	}
+	
+	public String getInfo(double salary, int workingHours) {
+		return("The salary is " + salary + " and working hours are " + workingHours + ".");
+	}
+	
+	public double getSalary() {
+		return this.salary;
+	}
+	
+	public int getWorkingHour() {
+		return this.workingHours;
+	}
+	
+}
