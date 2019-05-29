@@ -1,0 +1,88 @@
+
+public class Matrix {
+	private int rows, cols;
+	private int[][] mat;
+	
+	// public constructor
+	public Matrix(int rows, int cols) {
+		this.rows = rows;
+		this.cols = cols;
+		mat = new int[rows][cols];
+		System.out.println("Constructor Called");
+	}
+	
+	// print number of rows
+	public int numberOfRows() {
+		System.out.println("Rows: " + this.rows);
+		return this.rows;
+	}
+	
+	// print number of cols
+	public int numberOfCols() {
+		System.out.println("Cols: " + this.cols);
+		return this.cols;
+	}
+	
+	// set an element of matrix
+	public void setMatrixElement(int i, int j, int value) {
+		this.mat[i][j] = value;
+	}
+	
+	// print matrix
+	public void displayMatrix() {
+		System.out.println("Displaying Matrix");
+		for(int[] row : mat) {
+			for(int col : row) {
+				System.out.print(col + "\t");
+			}
+			System.out.println();
+		}
+	}
+	
+	// add 2 matrices if dimensions are same
+	public void addTwoMatrices(Matrix m) {
+		System.out.println("Matrix 1 length: " + this.mat.length);
+		System.out.println("Matrix 2 length: " + m.mat.length);
+		
+		if(this.mat.length == m.mat.length) {
+			System.out.println("Adding matrices");
+			int[][] c = new int[m.rows][m.cols];
+			
+			for(int i=0; i<m.rows; i++) {
+				for(int j=0; j<m.cols; j++) {
+					c[i][j] = this.mat[i][j] + m.mat[i][j];
+					System.out.print(c[i][j] + "\t");
+				}
+				System.out.println();
+			}
+		}
+		else {
+			System.out.println("Two matrices dimensions are not same.");
+			System.out.println("Matrices cannot be added");
+		}
+	}
+	
+	// multiply 2 matrices
+		public void mulTwoMatrices(Matrix m) {
+			System.out.println("Matrix 1 length: " + this.mat.length);
+			System.out.println("Matrix 2 length: " + m.mat.length);
+			
+			if(this.mat.length == m.mat.length) {
+				System.out.println("Matrices Multiplication");
+				int[][] c = new int[m.rows][m.cols];
+				
+				for(int i=0; i<m.rows; i++) {
+					for(int j=0; j<m.cols; j++) {
+						c[i][j] = this.mat[i][j] * m.mat[i][j];
+						System.out.print(c[i][j] + "\t");
+					}
+					System.out.println();
+				}
+			}
+			else {
+				System.out.println("Two matrices dimensions are not same.");
+				System.out.println("Matrices cannot be multiplied");
+			}
+		}
+	
+}
