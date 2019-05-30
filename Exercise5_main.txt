@@ -1,0 +1,53 @@
+package inheritance;
+
+// main class
+public class Inheritance {
+	static final String dashes = "----------------------------------------";
+	
+	public static void main(String[] args) {
+		
+		System.out.println("With Circle class");
+		System.out.println(dashes);
+		Circle c1 = new Circle(2.2);
+		System.out.println("Circle Radius: " + c1.getRadius());
+		System.out.println("Circle Color: " + c1.getColor());
+		System.out.println("Circle Area: " + c1.getArea());
+		System.out.println(c1.toString());
+		System.out.println(dashes);
+		
+		System.out.println("With Cylinder subclass");
+		System.out.println(dashes);
+		// no values constructor
+		Cylinder cl1 = new Cylinder();
+		// radius value only
+		Cylinder cl2 = new Cylinder(2.2);
+		// radius and height values only
+		Cylinder cl3 = new Cylinder(3.2, 3);
+		// all values
+		Cylinder cl4 = new Cylinder(4.2, 3.3, "blue");
+		
+		cl1.setColor("green");
+		cl2.setColor("orange");
+		
+		System.out.println("Cyl 1 Radius: " + cl1.getRadius());
+		System.out.println("Cyl 2 Radius: " + cl2.getRadius());
+		System.out.println("Cyl 3 Radius: " + cl3.getRadius());
+		System.out.println("Cyl 4 Radius: " + cl4.getRadius());
+		
+		System.out.println("Cyl 1 Height: " + cl1.getHeight());
+		System.out.println("Cyl 2 Height: " + cl2.getHeight());
+		System.out.println("Cyl 3 Height: " + cl3.getHeight());
+		System.out.println("Cyl 4 Height: " + cl4.getHeight());
+		
+		System.out.println("Cyl 1 Color: " + cl1.getColor());
+		System.out.println("Cyl 2 Color: " + cl2.getColor());
+		System.out.println("Cyl 3 Color: " + cl3.getColor());
+		System.out.println("Cyl 4 Color: " + cl4.getColor());
+		
+		System.out.println("Cyl 1 Vol. " + cl1.getVolume());
+		System.out.println("Cyl 2 Vol. " + cl2.getVolume());
+		System.out.println("Cyl 3 Vol. " + cl3.getVolume());
+		System.out.println("Cyl 4 Vol. " + cl4.getVolume());
+		
+	}
+}
