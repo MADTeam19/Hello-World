@@ -1,0 +1,60 @@
+package inheritance;
+
+// Child class
+public class Cylinder extends Circle {
+	
+	private double height;
+	
+	// constructor
+	public Cylinder() {
+		// call to Circle class constructor which will set the 
+		// default values for radius and color
+		super();  
+		// set the height value here
+		this.height = 1.0;
+	}
+	
+	// constructor
+	public Cylinder(double radius) {
+		// call to Circle class constructor with one argument radius
+		// 2nd argument color will set to default
+		super(radius);
+		// set height value here
+		this.height = 1.0;
+	}
+	
+	// constructor
+	public Cylinder(double radius, double height) {
+		// call to Circle class constructor with one argument radius
+		// 2nd argument color will set to default
+		super(radius);
+		// set height value from argument
+		this.height = height;
+	}
+	
+	// constructor
+	public Cylinder(double radius, double height, String color) {
+		// call to Circle class constructor with 2 arguments for
+		// radius and color
+		super(radius, color);
+		// set height from argument
+		this.height = height;
+	}
+	
+	// get height method
+	public double getHeight() {
+		return(this.height);
+	}
+	
+	// set height method
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	
+	// get cylinder volume
+	public double getVolume() {
+		// V = PI * r * r * h
+		// Circle Area = PI * r * r provided by getArea method
+		return(super.getArea() * this.height);
+	}
+}
